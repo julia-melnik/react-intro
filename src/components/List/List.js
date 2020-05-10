@@ -18,12 +18,13 @@ class List extends React.Component {
         image: PropTypes.string.isRequired,
         description: PropTypes.node,
         columns: PropTypes.array,
-        addColumn: PropTypes.func,
+        
     }
 
     static defaultProps = {
         description: settings.defaultListDescription,
     }
+
     addColumn(title) {
         this.setState(state => (
             {
@@ -58,7 +59,7 @@ class List extends React.Component {
                     ))}
                 </div>
                 <div className={styles.creator}>
-                    <Creator text={settings.columnCreatorText} action={addColumn} />
+                <Creator text={settings.columnCreatorText} action={this.addColumn.bind(this)} />
                 </div>
             </section>
         )
