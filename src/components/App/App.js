@@ -18,7 +18,7 @@ class App extends React.Component { // Aby komponent mógł być zdefiniowany ja
         <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
         <List {...listData} />
       </main>
-    )
+    );
   }
 }
 
