@@ -2,58 +2,63 @@ import React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
-import Column from '../Column/Column.js';
+//import Column from '../Column/Column.js';
 import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
-import Creator from '../Creator/Creator.js';
+//import Creator from '../Creator/Creator.js';
 
 class List extends React.Component {
 
-    state = { //początkowy stan 
-      columns: this.props.columns || [], //??
-    } //jeśli this.props.columns nie zostało zde3niowane, czyli komponent nie otrzymał propsa columns , to w this.state.columns znajdzie się pusta tablica []
+  /*state = { //początkowy stan 
+    columns: this.props.columns || [],
+  } //jeśli this.props.columns nie zostało zde3niowane, czyli komponent nie otrzymał propsa columns , to w this.state.columns znajdzie się pusta tablica []
+*/
+  static propTypes = { //static , które oznacza że będziemy de3niować statyczną właściwość tej klasy
+    title: PropTypes.node.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.node,
+    columns: PropTypes.array,
+    addColumn: PropTypes.func,
+  }
 
-    static propTypes = { //static , które oznacza że będziemy de3niować statyczną właściwość tej klasy
-      title: PropTypes.node.isRequired,
-      image: PropTypes.string.isRequired,
-      description: PropTypes.node,
-      columns: PropTypes.array,
+  static defaultProps = {
+    description: settings.defaultListDescription,
+  }
 
-    }
+  /* addColumn(title) {
+     this.setState(state => (
+       {
+         columns: [
+           ...state.columns,
+           {
+             key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
+             title,
+             icon: 'list-alt',
+             cards: [],
+           },
+         ],
+       }
+     ));
+   }*/
 
-    static defaultProps = {
-      description: settings.defaultListDescription,
-    }
-
-    addColumn(title) {
-      this.setState(state => (
-        {
-          columns: [
-            ...state.columns,
-            {
-              key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
-              title,
-              icon: 'list-alt',
-              cards: [],
-            },
-          ],
-        }
-      ));
-    }
-
-    render() {
-      return (
-        <section className={styles.component}>
-          <Hero titleText={this.props.title} img={this.props.image}></Hero>
-          <div className={styles.description}>
-            {/*{this.props.description}*/}
-            {ReactHtmlParser(this.props.description)}
-          </div>
-
-          <div className={styles.columns}>
-            {/*<Column titleColumn={'Animals'}/>
+  render() {
+    const { title, image, description } = this.props;
+    return (
+      <section className={styles.component}>
+        <Hero titleText={title} img={image} />
+        <div className={styles.description}>
+          {ReactHtmlParser(description)}
+        </div>
+        {/*<Hero titleText={this.props.title} img={this.props.image}></Hero>
+        <div className={styles.description}>
+          *{this.props.description}
+          {ReactHtmlParser(this.props.description)} */}
+        {/*<div className={styles.columns}>
+          zmiana 1 
+            <Column titleColumn={'Animals'}/>
           <Column titleColumn={'Plants'}/>
-          <Column titleColumn={'Minerals'}/> */}
+          <Column titleColumn={'Minerals'}/> 
+          zmaina 2 
             {this.state.columns.map(({ key, ...columnProps }) => (//???  
               <Column key={key} {...columnProps} />
             ))}
@@ -61,9 +66,10 @@ class List extends React.Component {
           <div className={styles.creator}>
             <Creator text={settings.columnCreatorText} action={this.addColumn.bind(this)} />
           </div>
-        </section>
-      );
-    }
+            */}
+      </section>
+    );
+  }
 }
 export default List; //Dzięki niemu, importując App w pliku index.js , możemy pominąć nawiasy klamrowe, czyli nie musimy pisać import {App} from'...'; , tak jak do tej pory to robiliśmy.
 /* KOMPON. KLASOWY:
