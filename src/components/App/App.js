@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './App.scss';
 import PropTypes from 'prop-types';
-import List from '../List/List.js';
+import List from '../List/ListContainer.js';
 // zmiana 4 import { pageContents, listData } from '../../data/dataStore';
 
 class App extends React.Component { // Aby komponent mógł być zdefiniowany jako klasa, musi on dziedziczyć po klasie React.Component
