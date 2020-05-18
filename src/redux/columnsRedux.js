@@ -10,7 +10,7 @@ const createActionName = name => `app/${reducerName}/${name}`; //potrzebna w kaÅ
 // action types
 export const ADD_COLUMN = createActionName('ADD_COLUMN');
 
-// action creators
+// action creators     
 export const createActionAddColumn = payload => ({ payload: { ...payload, id: shortid.generate() }, type: ADD_COLUMN });
 
 // reducer

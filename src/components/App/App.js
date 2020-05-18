@@ -2,9 +2,12 @@ import React from 'react';
 import styles from './App.scss';
 import PropTypes from 'prop-types';
 import List from '../List/ListContainer.js';
+import Search from '../Search/SearchContainer.js';
+
 // zmiana 4 import { pageContents, listData } from '../../data/dataStore';
 
 class App extends React.Component { // Aby komponent mógł być zdefiniowany jako klasa, musi on dziedziczyć po klasie React.Component
+
   static propTypes = {
     title: PropTypes.node,
     subtitle: PropTypes.node,
@@ -19,7 +22,7 @@ class App extends React.Component { // Aby komponent mógł być zdefiniowany ja
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
-
+        <Search />
         {/* zmiana 3 return ( 
       <main className={styles.component}> 
         {/* zmiana 1 

@@ -8,8 +8,8 @@ const mapStateToProps = (state, props) => ({ // dodaje propsy komponentu List, w
   columns: getColumnsForList(state, props.id),  // pierwszy argm. zawsze state    
 });
  
-const mapDispatchToProps = (dispatch, props) => ({ //dodaje propsy komponentu – jednak ich wartościami nie są dane ze stanu, ale funkcje wysyłające akcje do magazynu.
-  addColumn: title => dispatch(createActionAddColumn({
+const mapDispatchToProps = (dispatch, props) => ({ //zadaniem jest wysyłanie akcji
+  addColumn: title => dispatch(createActionAddColumn({ //przekazując go do propsaaction komponentu Creator
     listId: props.id,
     title,
   })),
