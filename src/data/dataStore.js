@@ -17,6 +17,13 @@ export const settings = {
 export const pageContents = {
   title: 'My first React app',
   subtitle: 'A simple to-do app, with lists, columns and cards',
+  titleInfo: 'Information is my passion',
+  discriptionInfo:'Most common information about this site',
+  imageInfo:'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  titleFAQ: 'Frequently Asked Questions',
+  discriptionFAQ:'Here You can find all the information you need',
+  imageFAQ:'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+
 };
 export const listData = {
   title: 'Things to do <sup>soon!</sup>',
