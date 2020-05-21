@@ -7,7 +7,11 @@ const baseConfig = () => ({
   entry: './src/index.js', //wskazuje, w którym pliku JS znajduje się główny kod aplikacji.
   output: { //wskazuje miejsce, w którym ma być wygenerowana wersja produkcyjna,
     path: path.join(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'scripts_bundle.js',
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: { //zawiera kon3gurację dla różnych typów plików – np. dla plików JS czy SCSS.
     rules: [

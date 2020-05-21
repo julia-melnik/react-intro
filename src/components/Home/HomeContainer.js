@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import App from './App';
+import Home from './Home';
 
 const mapStateToProps = state => ({//powiązane propsów ze stanem 
   title: state.app.title,
@@ -7,4 +7,4 @@ const mapStateToProps = state => ({//powiązane propsów ze stanem
   lists: state.lists,
 });
 
-export default connect(mapStateToProps)(App); //odpowiedzialne za połączenie komponentu App z magazynem
+export default connect(mapStateToProps)(Home); //odpowiedzialne za połączenie komponentu App z magazynem
