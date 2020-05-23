@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Home.scss';
 import PropTypes from 'prop-types';
-import List from '../List/ListContainer.js';
-import Search from '../Search/SearchContainer.js';
+import ListLink from '../ListLink/ListLink.js';
+//import Search from '../Search/SearchContainer.js';
 
 // zmiana 4 import { pageContents, listData } from '../../data/dataStore';
 
@@ -22,8 +22,8 @@ class Home extends React.Component { // Aby komponent mógł być zdefiniowany j
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
-        <Search />
-        {/* zmiana 3 return ( 
+        {/*  <Search />
+     zmiana 3 return ( 
       <main className={styles.component}> 
         {/* zmiana 1 
         <h1 className={styles.title}>My first React app</h1>
@@ -36,7 +36,7 @@ class Home extends React.Component { // Aby komponent mógł być zdefiniowany j
          zmiana 2 
         <List {...listData} /> */}
         {lists.map(listData => (
-          <List key={listData.id} {...listData} />
+          <ListLink key={listData.id} {...listData} />
         ))}
       </main>
     );

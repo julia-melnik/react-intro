@@ -9,7 +9,6 @@ import Creator from '../Creator/Creator.js';
 import Container from '../Container/Container.js';
 
 class List extends React.Component {
-
   /*state = { //początkowy stan 
     columns: this.props.columns || [],
   } //jeśli this.props.columns nie zostało zde3niowane, czyli komponent nie otrzymał propsa columns , to w this.state.columns znajdzie się pusta tablica []
@@ -25,7 +24,6 @@ class List extends React.Component {
   static defaultProps = {
     description: settings.defaultListDescription,
   }
-
   /* addColumn(title) {
      this.setState(state => (
        {
@@ -41,7 +39,6 @@ class List extends React.Component {
        }
      ));
    }*/
-
   render() {
     const { title, image, description, columns, addColumn } = this.props;
     return (
