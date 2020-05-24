@@ -121,7 +121,37 @@ const columns = [
   {
     id: 'column-4',
     listId: 'list-2',
-    title: 'Strange column',
+    title: 'Nauka',
+    icon: 'question',
+  },
+  {
+    id: 'column-5',
+    listId: 'list-2',
+    title: 'Nauka',
+    icon: 'question',
+  },
+  {
+    id: 'column-6',
+    listId: 'list-2',
+    title: 'Nauka',
+    icon: 'question',
+  },
+  {
+    id: 'column-7',
+    listId: 'list-3',
+    title: 'Sport',
+    icon: 'question',
+  },
+  {
+    id: 'column-8',
+    listId: 'list-3',
+    title: 'Sport',
+    icon: 'question',
+  },
+  {
+    id: 'column-9',
+    listId: 'list-3',
+    title: 'Sport',
     icon: 'question',
   },
 ];
@@ -156,6 +186,21 @@ const cards = [
     id: 'card-6',
     columnId: 'column-3',
     title: 'Skyrim',
+  },
+  {
+    id: 'card-7',
+    columnId: 'column-4',
+    title: 'The Witcher',
+  },
+  {
+    id: 'card-8',
+    columnId: 'column-5',
+    title: 'Skyrim',
+  },
+  {
+    id: 'card-9',
+    columnId: 'column-6',
+    title: 'LALA',
   },
 ];
 
